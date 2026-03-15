@@ -1,0 +1,59 @@
+<?php
+/**
+ * This template is used to display bbPress forums.
+ *
+ * @package Organic Agency
+ * @since Organic Agency 1.0
+ */
+
+get_header(); ?>
+
+<!-- BEGIN .post class -->
+<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+
+	<!-- BEGIN .row -->
+	<div class="row">
+
+		<!-- BEGIN .content -->
+		<div class="content">
+
+			<?php if ( is_active_sidebar( 'sidebar-forum' ) ) { ?>
+
+				<!-- BEGIN .twelve columns -->
+				<section class="twelve columns">
+
+					<?php get_template_part( 'templates/loop', 'page' ); ?>
+
+				<!-- END .twelve columns -->
+				</section>
+
+				<!-- BEGIN .four columns -->
+				<section class="four columns">
+
+					<?php get_sidebar( 'forum' ); ?>
+
+				<!-- END .four columns -->
+				</section>
+
+			<?php } else { ?>
+
+				<!-- BEGIN .sixteen columns -->
+				<section class="sixteen columns">
+
+					<?php get_template_part( 'templates/loop', 'page' ); ?>
+
+				<!-- END .sixteen columns -->
+				</section>
+
+			<?php } ?>
+
+		<!-- END .content -->
+		</div>
+
+	<!-- END .row -->
+	</div>
+
+<!-- END .post class -->
+</div>
+
+<?php get_footer(); ?>
